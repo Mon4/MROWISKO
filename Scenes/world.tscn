@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Tilesets/ground.res" type="TileSet" id=1]
+[ext_resource path="res://Scripts/Camera2D.gd" type="Script" id=2]
 
 [node name="world" type="Node2D"]
 
@@ -14,4 +15,5 @@ anchor_mode = 0
 current = true
 drag_margin_h_enabled = false
 drag_margin_v_enabled = false
+script = ExtResource( 2 )
 
