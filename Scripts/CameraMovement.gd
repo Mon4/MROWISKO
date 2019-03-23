@@ -8,6 +8,8 @@ export var zoomMax = 3.0
 
 var zoompos = Vector2()
 var zoomfactor = 1.0
+var zooming = false
+
 
 func _ready():
 	pass
@@ -27,17 +29,18 @@ func _process(delta):
 	zoom.x = clamp(zoom.x, zoomMin, zoomMax)
 	zoom.y = clamp(zoom.y, zoomMin, zoomMax)
 	
-func _input(event):
-	if abs(zoompos.x - get_global_mouse_position().x) > zoommargin:
-		zoomfactor = 1.0
-	if abs(zoompos.y - get_global_mouse_position().y) > zoommargin:
+	if not zooming:
 		zoomfactor = 1.0
 	
+func _input(event):
 	if event is InputEventMouseButton:
 		if event.is_pressed():
+			zooming = true
 			if event.button_index == BUTTON_WHEEL_UP:
-				zoomfactor -= 0.01
+				zoomfactor -= 0.01 * zoomspeed
 				zoompos = get_global_mouse_position()
 			if event.button_index == BUTTON_WHEEL_DOWN:
-				zoomfactor += 0.01
+				zoomfactor += 0.01 * zoomspeed
 				zoompos = get_global_mouse_position()
+		else:
+			zooming = false

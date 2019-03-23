@@ -16,5 +16,5 @@ drag_margin_h_enabled = false
 drag_margin_v_enabled = false
 script = ExtResource( 2 )
 speed = 25.0
-zoomspeed = 100.0
+zoomspeed = 20.0
 
