@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Tilesets/ground.res" type="TileSet" id=1]
 [ext_resource path="res://Scripts/CameraMovement.gd" type="Script" id=2]
+[ext_resource path="res://Textures/UI/red_panel.png" type="Texture" id=3]
 
 [node name="world" type="Node2D"]
 
@@ -17,4 +18,21 @@ drag_margin_v_enabled = false
 script = ExtResource( 2 )
 speed = 25.0
 zoomspeed = 20.0
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Base" type="Control" parent="UI"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="UI/Base"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -56.0
+texture = ExtResource( 3 )
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 10
 
