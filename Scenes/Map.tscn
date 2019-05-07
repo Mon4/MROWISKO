@@ -34,5 +34,5 @@ script = ExtResource( 4 )
 speed = 25.0
 zoomspeed = 20.0
 zoomMin = 1.0
-zoomMax = 3.5
+zoomMax = 5.0
 
